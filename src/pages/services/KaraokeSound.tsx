@@ -14,11 +14,11 @@ const KaraokeSound = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mb-6">
               <Mic className="h-4 w-4" />
-              <span className="text-sm font-medium">Karaoke Sound Services</span>
+              <span className="text-sm font-medium">Song Request Service</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Complete Karaoke Setup For Entertaining Events</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Request Your Favorite Songs Live</h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Turn your event into an unforgettable singing experience with SoundMaster's professional karaoke equipment and services across the Limpopo region.
+              Interact with our DJs and request your favorite songs to be played on our live stream. Enjoy a personalized music experience with Soundmaster Live.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <BookingModal
@@ -37,7 +37,7 @@ const KaraokeSound = () => {
       {/* Features Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">What We Offer</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Our Song Request Features</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card hover:shadow-lg transition-shadow">
@@ -45,9 +45,9 @@ const KaraokeSound = () => {
                 <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
                   <Music2 className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Professional Equipment</h3>
+                <h3 className="text-xl font-semibold mb-4">Easy Request System</h3>
                 <p className="text-muted-foreground mb-4">
-                  High-quality speakers, microphones, and mixing equipment for the best sound experience.
+                  Simple and user-friendly ways to request your favorite songs during our live broadcasts.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
@@ -121,38 +121,120 @@ const KaraokeSound = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-16">What Our Listeners Say</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-card hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
+                  <Music2 className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Easy Request System</h3>
+                <p className="text-lg mb-6">
+                "I love how easy it is to request songs on Soundmaster Live! They always play my requests within minutes, and the DJs are so friendly and interactive."
+              </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Multiple request platforms</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Quick request processing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>User-friendly interfaces</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
+                  <List className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Extensive Music Library</h3>
+                <p className="text-muted-foreground mb-4">
+                  Access to thousands of songs across different genres with a focus on Limpopo regional music.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Over 50,000 songs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Regular updates with new hits</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Custom song requests available</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
+                  <Tv2 className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Interactive Experience</h3>
+                <p className="text-muted-foreground mb-4">
+                  Engage with our DJs and other listeners for a truly interactive music experience.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>HD displays for lyrics</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Dynamic background visuals</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Multiple display options</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Packages Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">Karaoke Packages</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Request Platforms</h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="bg-card hover:shadow-lg transition-shadow border-border">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Basic Package</h3>
-                <p className="text-sm text-muted-foreground mb-6">For small gatherings</p>
-                <div className="text-3xl font-bold mb-6">R2,999</div>
+                <h3 className="text-xl font-semibold mb-2">VirtualDJ Platform</h3>
+                <p className="text-sm text-muted-foreground mb-6">Request through VirtualDJ</p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Up to 3 hours of service</span>
+                    <span>Easy song search</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>2 wireless microphones</span>
+                    <span>Direct DJ messaging</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Standard song library</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Single display setup</span>
+                    <span>Request tracking</span>
                   </li>
                 </ul>
                 <BookingModal
                   eventType="karaoke"
-                  buttonText="Select Package"
+                  buttonText="Select Platform"
                   fullWidth
                 />
               </CardContent>
@@ -161,34 +243,29 @@ const KaraokeSound = () => {
             <Card className="bg-card hover:shadow-lg transition-shadow border-primary">
               <CardContent className="p-6">
                 <div className="bg-primary text-primary-foreground text-xs font-bold uppercase px-3 py-1 rounded-full w-fit mb-4">Popular</div>
-                <h3 className="text-xl font-semibold mb-2">Premium Package</h3>
-                <p className="text-sm text-muted-foreground mb-6">For medium events</p>
-                <div className="text-3xl font-bold mb-6">R4,999</div>
+                <h3 className="text-xl font-semibold mb-2">Social Media</h3>
+                <p className="text-sm text-muted-foreground mb-6">Request via comments</p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Up to 5 hours of service</span>
+                    <span>Facebook comments</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>4 wireless microphones</span>
+                    <span>YouNow chat</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Extended song library</span>
+                    <span>Kick platform chat</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Dual display setup</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Basic lighting effects</span>
+                    <span>Public request visibility</span>
                   </li>
                 </ul>
                 <BookingModal
                   eventType="karaoke"
-                  buttonText="Select Package"
+                  buttonText="Select Platform"
                   fullWidth
                 />
               </CardContent>

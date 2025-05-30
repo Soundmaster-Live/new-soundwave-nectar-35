@@ -19,40 +19,40 @@ const Services = () => {
 
   const services = [
     {
-      title: "Party Sound",
-      description: "Professional sound services for any party or event",
+      title: "Live Streaming",
+      description: "Enjoy the sounds of Limpopo through our live streaming service",
       icon: Music,
       features: [
-        "High-quality sound systems",
-        "Custom playlists",
-        "Professional DJ services",
-        "Lighting equipment"
+        "High-quality audio streaming",
+        "Limpopo regional music",
+        "Interactive song requests",
+        "24/7 availability"
       ],
       path: "/services/party-sound",
       color: "from-blue-500 to-violet-500"
     },
     {
-      title: "Karaoke Sound",
-      description: "Complete karaoke setup for entertaining events",
+      title: "Song Requests",
+      description: "Request your favorite songs to be played on our stream",
       icon: Mic,
       features: [
-        "Extensive song library",
-        "Professional microphones",
-        "HD displays",
-        "Sound mixing"
+        "Easy request system",
+        "Extensive music library",
+        "Quick response time",
+        "Special dedications"
       ],
       path: "/services/karaoke-sound",
       color: "from-pink-500 to-orange-400"
     },
     {
-      title: "Wedding Sound",
-      description: "Make your special day perfect with our sound services",
+      title: "Special Events",
+      description: "Join us for special streaming events and themed music sessions",
       icon: Heart,
       features: [
-        "Ceremony & reception setup",
-        "Wireless microphones",
-        "Custom wedding playlists",
-        "Backup equipment"
+        "Themed music sessions",
+        "Guest DJ appearances",
+        "Interactive listener events",
+        "Special holiday broadcasts"
       ],
       path: "/services/wedding-sound",
       color: "from-teal-400 to-emerald-500"

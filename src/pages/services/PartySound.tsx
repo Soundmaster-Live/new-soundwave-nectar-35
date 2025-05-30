@@ -14,11 +14,11 @@ const PartySound = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mb-6">
               <PartyPopper className="h-4 w-4" />
-              <span className="text-sm font-medium">Party Sound Services</span>
+              <span className="text-sm font-medium">Live Streaming Service</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Elevate Your Party With Premium Sound</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Enjoy the Sounds of Limpopo Live</h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Founded in 2022, SoundMaster delivers exceptional sound experiences for parties and events across the Tzaneen community and Limpopo region.
+              Soundmaster Live brings you high-quality audio streaming from the heart of Limpopo. Tune in and enjoy our interactive music experience with song requests and regional favorites.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <BookingModal
@@ -37,7 +37,7 @@ const PartySound = () => {
       {/* Features Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">Our Party Services</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Our Live Streaming Services</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card hover:shadow-lg transition-shadow">
@@ -45,22 +45,22 @@ const PartySound = () => {
                 <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
                   <Speaker className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Premium Sound Systems</h3>
+                <h3 className="text-xl font-semibold mb-4">High-Quality Audio</h3>
                 <p className="text-muted-foreground mb-4">
-                  High-quality sound equipment for crystal clear audio at any venue size.
+                  Crystal clear audio streaming that brings the authentic sounds of Limpopo directly to your device.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Professional speakers</span>
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>24/7 streaming availability</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Subwoofers for deep bass</span>
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Multiple streaming platforms</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Digital mixing console</span>
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Low latency broadcasting</span>
                   </li>
                 </ul>
               </CardContent>
@@ -71,22 +71,22 @@ const PartySound = () => {
                 <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Professional DJs</h3>
+                <h3 className="text-xl font-semibold mb-4">Interactive Experience</h3>
                 <p className="text-muted-foreground mb-4">
-                  Experienced DJs who know how to read the crowd and keep the party going.
+                  Request your favorite songs and interact with our live DJs during broadcasts.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Diverse music selection</span>
+                    <span>Real-time song requests</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Taking requests</span>
+                    <span>Live DJ chat interaction</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>MC services available</span>
+                    <span>Listener shoutouts</span>
                   </li>
                 </ul>
               </CardContent>
@@ -97,22 +97,109 @@ const PartySound = () => {
                 <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
                   <Lightbulb className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Lighting Effects</h3>
+                <h3 className="text-xl font-semibold mb-4">Regional Music Focus</h3>
                 <p className="text-muted-foreground mb-4">
-                  Create the perfect atmosphere with our professional lighting setups.
+                  Enjoy the authentic sounds of Limpopo with our curated regional music selections.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>LED dance floor lighting</span>
+                    <span>Curated playlists</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Strobe and effect lights</span>
+                    <span>Local artist features</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Customizable color schemes</span>
+                    <span>Community-driven music selection</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-16">What Our Listeners Say</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-card hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
+                  <Speaker className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">High-Quality Audio</h3>
+                <p className="text-lg mb-6">
+                "I love tuning into Soundmaster Live! The music selection is amazing, and I appreciate how they always play my song requests. It's like having a personal DJ!"
+              </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>24/7 streaming availability</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Multiple streaming platforms</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Low latency broadcasting</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Interactive Experience</h3>
+                <p className="text-lg mb-6">
+                "I love how I can interact with the DJs and request my favorite songs. It's such a unique experience!"
+              </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Real-time song requests</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Live DJ chat interaction</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Listener shoutouts</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
+                  <Lightbulb className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Regional Music Focus</h3>
+                <p className="text-lg mb-6">
+                "I'm so glad I discovered Soundmaster Live! They play the best music from Limpopo, and I feel like I'm back home whenever I tune in."
+              </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Curated playlists</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Local artist features</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Community-driven music selection</span>
                   </li>
                 </ul>
               </CardContent>
@@ -124,30 +211,26 @@ const PartySound = () => {
       {/* Packages Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">Party Packages</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Our Streaming Platforms</h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="bg-card hover:shadow-lg transition-shadow border-border">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Small Gathering</h3>
-                <p className="text-sm text-muted-foreground mb-6">For intimate parties</p>
-                <div className="text-3xl font-bold mb-6">R3,499</div>
+                <h3 className="text-2xl font-bold mb-2">Facebook Live</h3>
+                <p className="text-muted-foreground mb-6">Connect with us on social media</p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Up to 4 hours of service</span>
+                    <span>Live streaming on Facebook</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Sound system for up to 50 people</span>
+                    <span>Comment-based song requests</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Basic lighting setup</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>DJ with standard playlist</span>
+                    <span>Community interaction</span>
                   </li>
                 </ul>
                 <BookingModal
@@ -162,28 +245,24 @@ const PartySound = () => {
               <CardContent className="p-6">
                 <div className="bg-primary text-primary-foreground text-xs font-bold uppercase px-3 py-1 rounded-full w-fit mb-4">Popular</div>
                 <h3 className="text-xl font-semibold mb-2">Medium Event</h3>
-                <p className="text-sm text-muted-foreground mb-6">For standard parties</p>
-                <div className="text-3xl font-bold mb-6">R6,999</div>
+                <h3 className="text-2xl font-bold mb-2">Direct Stream</h3>
+                <p className="text-muted-foreground mb-6">Our dedicated streaming platform</p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Up to 6 hours of service</span>
+                    <span>High-quality direct streaming</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Sound system for up to 150 people</span>
+                    <span>24/7 availability</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Enhanced lighting package</span>
+                    <span>Minimal buffering</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Professional DJ</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Custom playlist creation</span>
+                    <span>Mobile-friendly interface</span>
                   </li>
                 </ul>
                 <BookingModal
