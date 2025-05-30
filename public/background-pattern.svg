@@ -1,0 +1,45 @@
+
+<svg width="1600" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="url(#smallGrid)"/>
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="soundWaveGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="10%" stop-color="rgba(255, 79, 31, 0.1)" />
+      <stop offset="90%" stop-color="rgba(0, 0, 0, 0)" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Sound wave circles -->
+  <circle cx="800" cy="450" r="400" fill="url(#soundWaveGradient)" opacity="0.4">
+    <animate attributeName="r" values="380;420;380" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="800" cy="450" r="300" fill="url(#soundWaveGradient)" opacity="0.3">
+    <animate attributeName="r" values="280;320;280" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="800" cy="450" r="200" fill="url(#soundWaveGradient)" opacity="0.2">
+    <animate attributeName="r" values="180;220;180" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Music notes scattered around -->
+  <g opacity="0.15">
+    <path d="M300,300 L300,250 L310,240 L320,250 L320,300 L300,300 Z M300,300 L320,300 L320,310 C320,321 300,321 300,310 L300,300 Z" fill="white">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 20" dur="3s" repeatCount="indefinite" />
+    </path>
+    <path d="M500,200 L500,150 L510,140 L520,150 L520,200 L500,200 Z M500,200 L520,200 L520,210 C520,221 500,221 500,210 L500,200 Z" fill="white">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 25" dur="4s" repeatCount="indefinite" />
+    </path>
+    <path d="M1100,300 L1100,250 L1110,240 L1120,250 L1120,300 L1100,300 Z M1100,300 L1120,300 L1120,310 C1120,321 1100,321 1100,310 L1100,300 Z" fill="white">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 15" dur="3.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+</svg>

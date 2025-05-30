@@ -1,0 +1,117 @@
+
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/components/navbar/useAuth";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { PieChart, Pie, Cell, ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { CalendarRange, Clock, ListMusic, MusicIcon, Radio, Users, Calendar, MessageSquare } from "lucide-react";
+
+import ClientDashboard from "@/components/dashboard/ClientDashboard";
+import BroadcasterDashboard from "@/components/dashboard/BroadcasterDashboard";
+import AdminDashboard from "@/components/dashboard/AdminDashboard";
+import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+const Dashboard = () => {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState<string>("overview");
+
+  useEffect(() => {
+    // If user is not logged in, redirect to auth page
+    if (!loading && !user) {
+      navigate("/auth");
+    }
+  }, [user, loading, navigate]);
+
+  // Redirect to admin panel for admins
+  useEffect(() => {
+    if (user?.is_admin) {
+      navigate("/admin");
+    }
+  }, [user, navigate]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  // If no user, don't render dashboard (redirect handles this)
+  if (!user) return null;
+
+  return (
+    <div className="container py-8 min-h-screen">
+      <DashboardHeader user={user} />
+      
+      <Tabs defaultValue="overview" value={activeTab} onValueChange={setActiveTab} className="mt-6">
+        <TabsList className="mb-4">
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="bookings">My Bookings</TabsTrigger>
+          <TabsTrigger value="events">Upcoming Events</TabsTrigger>
+          <TabsTrigger value="messages">Messages</TabsTrigger>
+        </TabsList>
+        
+        <TabsContent value="overview">
+          <ClientDashboard user={user} />
+        </TabsContent>
+        
+        <TabsContent value="bookings">
+          <Card>
+            <CardHeader>
+              <CardTitle>My Bookings</CardTitle>
+              <CardDescription>View and manage your event bookings</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center py-8">
+                <Calendar className="mx-auto h-12 w-12 text-muted-foreground" />
+                <h3 className="mt-4 text-lg font-semibold">No Bookings Yet</h3>
+                <p className="text-muted-foreground mt-2">You don't have any bookings yet. Book an event to get started.</p>
+                <Button className="mt-4" onClick={() => navigate("/contact")}>Book an Event</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        
+        <TabsContent value="events">
+          <Card>
+            <CardHeader>
+              <CardTitle>Upcoming Events</CardTitle>
+              <CardDescription>Events you might be interested in</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center py-8">
+                <CalendarRange className="mx-auto h-12 w-12 text-muted-foreground" />
+                <h3 className="mt-4 text-lg font-semibold">No Upcoming Events</h3>
+                <p className="text-muted-foreground mt-2">There are no upcoming events at the moment. Check back later!</p>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        
+        <TabsContent value="messages">
+          <Card>
+            <CardHeader>
+              <CardTitle>Messages</CardTitle>
+              <CardDescription>Communicate with our team</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center py-8">
+                <MessageSquare className="mx-auto h-12 w-12 text-muted-foreground" />
+                <h3 className="mt-4 text-lg font-semibold">No Messages</h3>
+                <p className="text-muted-foreground mt-2">You don't have any messages yet. Contact our team if you need assistance.</p>
+                <Button className="mt-4" onClick={() => navigate("/contact")}>Contact Us</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+};
+
+export default Dashboard;
