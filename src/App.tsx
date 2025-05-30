@@ -11,6 +11,7 @@ import AuthStateManager from "./components/auth/AuthStateManager";
 import AppRoutes from "./components/routing/AppRoutes";
 import ChatBot from "./components/ChatBot";
 import { AdminProvider } from "./contexts/AdminContext";
+import { AuthProvider } from "./hooks/use-auth.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,21 +34,23 @@ const App = () => {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider defaultTheme="light" storageKey="ui-theme">
           <TooltipProvider>
-            <AdminProvider>
-              <div className="min-h-screen flex flex-col bg-background">
-                <Navbar />
-                <main className="flex-grow pt-16">
-                  <AppRoutes />
-                </main>
-                <Footer />
-                <div className="fixed bottom-4 right-4 z-50">
-                  <ChatBot />
+            <AuthProvider>
+              <AdminProvider>
+                <div className="min-h-screen flex flex-col bg-background">
+                  <Navbar />
+                  <main className="flex-grow pt-16">
+                    <AppRoutes />
+                  </main>
+                  <Footer />
+                  <div className="fixed bottom-4 right-4 z-50">
+                    <ChatBot />
+                  </div>
+                  <Toaster />
+                  <Sonner />
                 </div>
-                <Toaster />
-                <Sonner />
-              </div>
-              <AuthStateManager queryClient={queryClient} />
-            </AdminProvider>
+                <AuthStateManager queryClient={queryClient} />
+              </AdminProvider>
+            </AuthProvider>
           </TooltipProvider>
         </ThemeProvider>
       </QueryClientProvider>

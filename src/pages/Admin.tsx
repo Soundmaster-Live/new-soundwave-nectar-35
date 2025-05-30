@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabase";
 import AdminHeader from "@/components/admin/AdminHeader";
 import UserManagement from "@/components/admin/UserManagement";
 import LiveLessonSettings from "@/components/admin/LiveLessonSettings";
 import DesignCustomizer from "@/components/design/DesignCustomizer";
+import { BookingManagement } from "@/components/admin/BookingManagement";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Admin = () => {
@@ -51,11 +52,15 @@ const Admin = () => {
       <Tabs defaultValue="users" className="mt-6">
         <TabsList>
           <TabsTrigger value="users">Users</TabsTrigger>
+          <TabsTrigger value="bookings">Bookings</TabsTrigger>
           <TabsTrigger value="lessons">Live Lessons</TabsTrigger>
           <TabsTrigger value="design">Design</TabsTrigger>
         </TabsList>
         <TabsContent value="users">
           <UserManagement />
+        </TabsContent>
+        <TabsContent value="bookings">
+          <BookingManagement />
         </TabsContent>
         <TabsContent value="lessons">
           <LiveLessonSettings />

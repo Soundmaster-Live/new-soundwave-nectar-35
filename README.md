@@ -29,8 +29,9 @@ SoundMaster Radio is a comprehensive web application for streaming radio content
 - **Live Radio Streaming**: Audio and video streaming with real-time metadata updates
 - **AI-Powered DJ**: AI broadcaster with text-to-speech capabilities
 - **User Authentication**: Complete user authentication and profile management
-- **Admin Dashboard**: Content management and analytics
+- **Admin Dashboard**: Content management, booking management, and analytics
 - **Interactive Content**: Live chat and user engagement features
+- **Booking System**: Comprehensive event booking system for weddings, parties, and karaoke events
 - **Multi-Environment Support**: Deploy to various cloud providers or run locally
 - **Responsive Design**: Fully responsive UI for all device sizes
 

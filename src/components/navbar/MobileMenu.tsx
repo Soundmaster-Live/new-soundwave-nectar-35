@@ -21,8 +21,8 @@ interface NavItem {
 interface MobileMenuProps {
   isOpen: boolean;
   navItems: NavItem[];
-  user: UserType | null;
-  loading: boolean;
+  user: any;
+  isLoading: boolean;
   openDropdown: string | null;
   setOpenDropdown: (name: string | null) => void;
   handleSignOut: () => Promise<void>;
@@ -33,7 +33,7 @@ export const MobileMenu = ({
   isOpen, 
   navItems, 
   user, 
-  loading, 
+  isLoading, 
   openDropdown, 
   setOpenDropdown,
   handleSignOut,
@@ -55,9 +55,9 @@ export const MobileMenu = ({
         ))}
         
         <div className="pt-4 space-y-2">
-          {!loading && !user ? (
+          {!isLoading && !user ? (
             <AuthButtons isMobile onItemClick={handleItemClick} />
-          ) : !loading && user ? (
+          ) : !isLoading && user ? (
             <MobileUserMenu 
               user={user} 
               onSignOut={handleSignOut} 

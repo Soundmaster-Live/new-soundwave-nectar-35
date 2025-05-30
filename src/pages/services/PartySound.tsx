@@ -1,20 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Music, PlusCircle, Volume2, Disc, CheckCircle2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { PartyPopper, Speaker, Users, Lightbulb, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BookingModal } from "@/components/booking/BookingModal";
 
 const PartySound = () => {
-  const { toast } = useToast();
-
-  const handleBooking = () => {
-    toast({
-      title: "Booking Request Sent",
-      description: "Thank you for your interest in our Party Sound service. We'll contact you soon!",
-    });
-  };
-
   return (
     <div className="pt-16 bg-gradient-to-b from-background to-muted/30">
       {/* Hero Section */}
@@ -23,17 +13,19 @@ const PartySound = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mb-6">
-              <Music className="h-4 w-4" />
+              <PartyPopper className="h-4 w-4" />
               <span className="text-sm font-medium">Party Sound Services</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Professional Sound for Your Perfect Party</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Elevate Your Party With Premium Sound</h1>
             <p className="text-lg text-muted-foreground mb-8">
-              SoundMaster provides premium quality sound equipment and DJ services to make your party unforgettable.
+              Founded in 2022, SoundMaster delivers exceptional sound experiences for parties and events across the Tzaneen community and Limpopo region.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" onClick={handleBooking}>
-                Book Now
-              </Button>
+              <BookingModal
+                eventType="party"
+                buttonText="Book Now"
+                buttonSize="lg"
+              />
               <Button size="lg" variant="outline" asChild>
                 <Link to="/contact">Get a Quote</Link>
               </Button>
@@ -45,30 +37,30 @@ const PartySound = () => {
       {/* Features Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">What We Offer</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Our Party Services</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
                 <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
-                  <Volume2 className="h-6 w-6 text-primary" />
+                  <Speaker className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">High-Quality Sound Systems</h3>
+                <h3 className="text-xl font-semibold mb-4">Premium Sound Systems</h3>
                 <p className="text-muted-foreground mb-4">
-                  Professional-grade speakers, amplifiers, and mixers that deliver crystal clear sound with the perfect bass.
+                  High-quality sound equipment for crystal clear audio at any venue size.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>JBL professional speakers</span>
+                    <span>Professional speakers</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Digital mixing consoles</span>
+                    <span>Subwoofers for deep bass</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Wireless microphones</span>
+                    <span>Digital mixing console</span>
                   </li>
                 </ul>
               </CardContent>
@@ -77,24 +69,24 @@ const PartySound = () => {
             <Card className="bg-card hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
                 <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
-                  <Disc className="h-6 w-6 text-primary" />
+                  <Users className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Expert DJ Services</h3>
+                <h3 className="text-xl font-semibold mb-4">Professional DJs</h3>
                 <p className="text-muted-foreground mb-4">
-                  Skilled DJs who know how to read the crowd and keep the dance floor packed all night long.
+                  Experienced DJs who know how to read the crowd and keep the party going.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Experienced professional DJs</span>
+                    <span>Diverse music selection</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Extensive music collection</span>
+                    <span>Taking requests</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Custom playlists creation</span>
+                    <span>MC services available</span>
                   </li>
                 </ul>
               </CardContent>
@@ -103,24 +95,24 @@ const PartySound = () => {
             <Card className="bg-card hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
                 <div className="rounded-full bg-primary/10 p-3 w-fit mb-6">
-                  <PlusCircle className="h-6 w-6 text-primary" />
+                  <Lightbulb className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Additional Services</h3>
+                <h3 className="text-xl font-semibold mb-4">Lighting Effects</h3>
                 <p className="text-muted-foreground mb-4">
-                  Complete your party setup with our range of additional services to enhance the atmosphere.
+                  Create the perfect atmosphere with our professional lighting setups.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Lighting effects and lasers</span>
+                    <span>LED dance floor lighting</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Fog machines</span>
+                    <span>Strobe and effect lights</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Dance floor installation</span>
+                    <span>Customizable color schemes</span>
                   </li>
                 </ul>
               </CardContent>
@@ -129,91 +121,115 @@ const PartySound = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Packages Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">Pricing Packages</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Party Packages</h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="bg-card hover:shadow-lg transition-shadow border-border">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Basic Package</h3>
-                <p className="text-sm text-muted-foreground mb-6">Perfect for smaller gatherings</p>
-                <div className="text-3xl font-bold mb-6">$499</div>
+                <h3 className="text-xl font-semibold mb-2">Small Gathering</h3>
+                <p className="text-sm text-muted-foreground mb-6">For intimate parties</p>
+                <div className="text-3xl font-bold mb-6">R3,499</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>4-hour DJ service</span>
+                    <span>Up to 4 hours of service</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Basic sound system</span>
+                    <span>Sound system for up to 50 people</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Basic lighting</span>
+                    <span>Basic lighting setup</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>DJ with standard playlist</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={handleBooking}>Select Package</Button>
+                <BookingModal
+                  eventType="party"
+                  buttonText="Select Package"
+                  fullWidth
+                />
               </CardContent>
             </Card>
 
             <Card className="bg-card hover:shadow-lg transition-shadow border-primary">
               <CardContent className="p-6">
                 <div className="bg-primary text-primary-foreground text-xs font-bold uppercase px-3 py-1 rounded-full w-fit mb-4">Popular</div>
-                <h3 className="text-xl font-semibold mb-2">Premium Package</h3>
-                <p className="text-sm text-muted-foreground mb-6">Great for medium-sized events</p>
-                <div className="text-3xl font-bold mb-6">$799</div>
+                <h3 className="text-xl font-semibold mb-2">Medium Event</h3>
+                <p className="text-sm text-muted-foreground mb-6">For standard parties</p>
+                <div className="text-3xl font-bold mb-6">R6,999</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>6-hour DJ service</span>
+                    <span>Up to 6 hours of service</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Professional sound system</span>
+                    <span>Sound system for up to 150 people</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Advanced lighting setup</span>
+                    <span>Enhanced lighting package</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Fog machine</span>
+                    <span>Professional DJ</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Custom playlist creation</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={handleBooking}>Select Package</Button>
+                <BookingModal
+                  eventType="party"
+                  buttonText="Select Package"
+                  fullWidth
+                />
               </CardContent>
             </Card>
 
             <Card className="bg-card hover:shadow-lg transition-shadow border-border">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Deluxe Package</h3>
-                <p className="text-sm text-muted-foreground mb-6">Perfect for large events</p>
-                <div className="text-3xl font-bold mb-6">$1,299</div>
+                <h3 className="text-xl font-semibold mb-2">Large Event</h3>
+                <p className="text-sm text-muted-foreground mb-6">For big celebrations</p>
+                <div className="text-3xl font-bold mb-6">R12,999</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>8-hour DJ service</span>
+                    <span>Up to 8 hours of service</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Premium sound system</span>
+                    <span>Sound system for 300+ people</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Complete lighting package</span>
+                    <span>Premium lighting package</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Dance floor setup</span>
+                    <span>Professional DJ + MC</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Assistant DJ</span>
+                    <span>Custom playlist & music planning</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>Backup equipment included</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={handleBooking}>Select Package</Button>
+                <BookingModal
+                  eventType="party"
+                  buttonText="Select Package"
+                  fullWidth
+                />
               </CardContent>
             </Card>
           </div>
@@ -224,14 +240,16 @@ const PartySound = () => {
       <section className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Book Your Party Sound?</h2>
+            <h2 className="text-3xl font-bold mb-6">Ready to Get the Party Started?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Contact us today to check availability for your event date and get a customized quote.
+              Contact us today to discuss your party needs and let us help create an unforgettable experience for you and your guests.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" onClick={handleBooking}>
-                Book Now
-              </Button>
+              <BookingModal
+                eventType="party"
+                buttonText="Book Now"
+                buttonSize="lg"
+              />
               <Button size="lg" variant="outline" asChild>
                 <Link to="/contact">Contact Us</Link>
               </Button>

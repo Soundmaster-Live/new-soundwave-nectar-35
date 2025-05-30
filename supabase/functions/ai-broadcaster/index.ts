@@ -32,9 +32,9 @@ async function tryWithMultipleKeys(apiCall: (key: string) => Promise<Response>, 
   for (const key of keys) {
     try {
       return await apiCall(key);
-    } catch (error) {
+    } catch (error: unknown) {
       console.warn(`API key ${key.substring(0, 8)}... failed:`, error);
-      lastError = error;
+      lastError = error instanceof Error ? error : new Error(String(error));
       // Continue to next key
     }
   }

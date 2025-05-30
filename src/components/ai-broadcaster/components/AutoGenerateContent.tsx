@@ -6,7 +6,7 @@ interface AutoGenerateContentProps {
   isStreamOnline: boolean;
   autoGenEnabled: boolean;
   isInitializing: boolean;
-  initializationError: boolean | null;
+  initializationError: boolean | string | null;
   isGenerating: boolean;
   isSpeaking: boolean;
   messages: Message[];

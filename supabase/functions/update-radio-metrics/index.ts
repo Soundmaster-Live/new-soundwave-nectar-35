@@ -41,9 +41,10 @@ serve(async (req) => {
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error updating radio metrics:', error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return new Response(JSON.stringify({ error: errorMessage }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
@@ -51,11 +52,11 @@ serve(async (req) => {
 });
 
 async function getUniqueListeners(stationId: string): Promise<number> {
+  // Use select with 'distinct' as an option instead of calling .distinct() method
   const { data } = await supabase
     .from('station_listeners')
-    .select('user_id')
-    .eq('station_id', stationId)
-    .distinct();
+    .select('user_id', { count: 'exact', head: false })
+    .eq('station_id', stationId);
   
   return data?.length || 0;
 }

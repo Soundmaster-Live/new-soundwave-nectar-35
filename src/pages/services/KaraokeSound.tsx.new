@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mic, Music2, List, Tv2, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { BookingModal } from "@/components/booking/BookingModal";
+import { ServiceBookingButton } from "@/components/booking/ServiceBookingButton";
 
 const KaraokeSound = () => {
   return (
@@ -18,17 +18,22 @@ const KaraokeSound = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Complete Karaoke Setup For Entertaining Events</h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Turn your event into an unforgettable singing experience with SoundMaster's professional karaoke equipment and services across the Limpopo region.
+              Turn your event into an unforgettable singing experience with SoundMaster's professional karaoke equipment and services.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <BookingModal
-                eventType="karaoke"
-                buttonText="Book Now"
-                buttonSize="lg"
+              <ServiceBookingButton 
+                eventType="karaoke" 
+                buttonText="Book Now" 
+                buttonSize="lg" 
               />
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">Get a Quote</Link>
-              </Button>
+              <ServiceBookingButton 
+                eventType="karaoke" 
+                buttonText="Get a Quote" 
+                buttonSize="lg" 
+                variant="outline" 
+                asLink={true} 
+                linkTo="/contact" 
+              />
             </div>
           </div>
         </div>
@@ -131,7 +136,7 @@ const KaraokeSound = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Basic Package</h3>
                 <p className="text-sm text-muted-foreground mb-6">For small gatherings</p>
-                <div className="text-3xl font-bold mb-6">R2,999</div>
+                <div className="text-3xl font-bold mb-6">$299</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -150,10 +155,10 @@ const KaraokeSound = () => {
                     <span>Single display setup</span>
                   </li>
                 </ul>
-                <BookingModal
-                  eventType="karaoke"
-                  buttonText="Select Package"
-                  fullWidth
+                <ServiceBookingButton 
+                  eventType="karaoke" 
+                  buttonText="Select Package" 
+                  fullWidth 
                 />
               </CardContent>
             </Card>
@@ -163,7 +168,7 @@ const KaraokeSound = () => {
                 <div className="bg-primary text-primary-foreground text-xs font-bold uppercase px-3 py-1 rounded-full w-fit mb-4">Popular</div>
                 <h3 className="text-xl font-semibold mb-2">Premium Package</h3>
                 <p className="text-sm text-muted-foreground mb-6">For medium events</p>
-                <div className="text-3xl font-bold mb-6">R4,999</div>
+                <div className="text-3xl font-bold mb-6">$499</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -186,10 +191,10 @@ const KaraokeSound = () => {
                     <span>Basic lighting effects</span>
                   </li>
                 </ul>
-                <BookingModal
-                  eventType="karaoke"
-                  buttonText="Select Package"
-                  fullWidth
+                <ServiceBookingButton 
+                  eventType="karaoke" 
+                  buttonText="Select Package" 
+                  fullWidth 
                 />
               </CardContent>
             </Card>
@@ -198,7 +203,7 @@ const KaraokeSound = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Ultimate Package</h3>
                 <p className="text-sm text-muted-foreground mb-6">For large events</p>
-                <div className="text-3xl font-bold mb-6">R7,999</div>
+                <div className="text-3xl font-bold mb-6">$799</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -225,10 +230,10 @@ const KaraokeSound = () => {
                     <span>Dedicated KJ (Karaoke Jockey)</span>
                   </li>
                 </ul>
-                <BookingModal
-                  eventType="karaoke"
-                  buttonText="Select Package"
-                  fullWidth
+                <ServiceBookingButton 
+                  eventType="karaoke" 
+                  buttonText="Select Package" 
+                  fullWidth 
                 />
               </CardContent>
             </Card>
@@ -245,14 +250,19 @@ const KaraokeSound = () => {
               Contact us today to discuss your karaoke needs and let us help create an unforgettable experience for your guests.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <BookingModal
-                eventType="karaoke"
-                buttonText="Book Now"
-                buttonSize="lg"
+              <ServiceBookingButton 
+                eventType="karaoke" 
+                buttonText="Book Now" 
+                buttonSize="lg" 
               />
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">Contact Us</Link>
-              </Button>
+              <ServiceBookingButton 
+                eventType="karaoke" 
+                buttonText="Contact Us" 
+                buttonSize="lg" 
+                variant="outline" 
+                asLink={true} 
+                linkTo="/contact" 
+              />
             </div>
           </div>
         </div>

@@ -38,7 +38,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-muted-foreground">soundmaster@gmail.com</p>
+                    <p className="text-muted-foreground">soundmasterlive@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -47,6 +47,14 @@ const Contact = () => {
                     <h3 className="font-semibold">Location</h3>
                     <p className="text-muted-foreground">Tzaneen, Limpopo, South Africa</p>
                   </div>
+                </div>
+                <h3 className="font-semibold mt-6">Social Media & Streaming</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <a href="https://www.facebook.com/profile.php?id=100091905356956" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Facebook</a>
+                  <a href="http://160.226.161.31:8000/Soundmasterlive" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Live Stream</a>
+                  <a href="https://www.younow.com/Soundmaster" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">YouNow</a>
+                  <a href="https://kick.com/soundmasterlive" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Kick</a>
+                  <a href="https://www.virtualdj.com/ask/Soundmaster" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Request Songs</a>
                 </div>
               </div>
             </CardContent>

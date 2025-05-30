@@ -42,7 +42,7 @@ export const useAudioStreamError = (
       toast({
         title: "Stream Error",
         description: `Connection issue detected. Retrying in ${Math.round(backoffTime/1000)} seconds...`,
-        variant: "warning",
+        variant: "default",
       });
 
       return new Promise(resolve => {
@@ -78,7 +78,7 @@ export const useAudioStreamError = (
       toast({
         title: "Playback Error",
         description: `Playback issue detected. Retrying in ${Math.round(backoffTime/1000)} seconds...`,
-        variant: "warning",
+        variant: "default",
       });
 
       return new Promise(resolve => {

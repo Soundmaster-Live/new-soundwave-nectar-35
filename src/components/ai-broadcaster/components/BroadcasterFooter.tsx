@@ -14,7 +14,7 @@ interface BroadcasterFooterProps {
   autoGenEnabled: boolean;
   isGenerating: boolean;
   isInitializing: boolean;
-  initializationError: string | null;
+  initializationError: string | boolean | null;
   handleKeyPress: (e: React.KeyboardEvent) => void;
 }
 

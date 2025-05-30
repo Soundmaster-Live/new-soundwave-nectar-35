@@ -7,7 +7,7 @@ const HeaderSection = () => {
         <Music className="h-6 w-6 text-primary" />
       </div>
       <h2 className="text-4xl font-bold leading-tight">
-        Meet <span className="text-primary">John Morden</span>
+        Meet <span className="text-primary">Soundmaster Live</span>
       </h2>
     </div>
   );

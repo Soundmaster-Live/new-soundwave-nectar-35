@@ -1,39 +1,44 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/components/navbar/useAuth";
+import useAuth from "../hooks/use-auth.tsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PieChart, Pie, Cell, ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { CalendarRange, Clock, ListMusic, MusicIcon, Radio, Users, Calendar, MessageSquare } from "lucide-react";
+import { User } from "@/types/user";
+import { createPlaceholderUser } from "@/utils/auth-helpers";
 
 import ClientDashboard from "@/components/dashboard/ClientDashboard";
 import BroadcasterDashboard from "@/components/dashboard/BroadcasterDashboard";
 import AdminDashboard from "@/components/dashboard/AdminDashboard";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import { BookingList } from "@/components/booking/BookingList";
 
 const Dashboard = () => {
-  const { user, loading } = useAuth();
+  const { user, isLoading } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<string>("overview");
 
   useEffect(() => {
     // If user is not logged in, redirect to auth page
-    if (!loading && !user) {
+    if (!isLoading && !user) {
       navigate("/auth");
     }
-  }, [user, loading, navigate]);
+  }, [user, isLoading, navigate]);
 
   // Redirect to admin panel for admins
   useEffect(() => {
-    if (user?.is_admin) {
+    // We'll check admin status from the auth context
+    const { isAdmin } = useAuth();
+    if (isAdmin) {
       navigate("/admin");
     }
-  }, [user, navigate]);
+  }, [navigate]);
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <LoadingSpinner />
@@ -46,7 +51,7 @@ const Dashboard = () => {
 
   return (
     <div className="container py-8 min-h-screen">
-      <DashboardHeader user={user} />
+      <DashboardHeader user={user ? createPlaceholderUser(user) : {} as User} />
       
       <Tabs defaultValue="overview" value={activeTab} onValueChange={setActiveTab} className="mt-6">
         <TabsList className="mb-4">
@@ -57,7 +62,7 @@ const Dashboard = () => {
         </TabsList>
         
         <TabsContent value="overview">
-          <ClientDashboard user={user} />
+          <ClientDashboard user={user ? createPlaceholderUser(user) : {} as User} />
         </TabsContent>
         
         <TabsContent value="bookings">
@@ -67,12 +72,7 @@ const Dashboard = () => {
               <CardDescription>View and manage your event bookings</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-center py-8">
-                <Calendar className="mx-auto h-12 w-12 text-muted-foreground" />
-                <h3 className="mt-4 text-lg font-semibold">No Bookings Yet</h3>
-                <p className="text-muted-foreground mt-2">You don't have any bookings yet. Book an event to get started.</p>
-                <Button className="mt-4" onClick={() => navigate("/contact")}>Book an Event</Button>
-              </div>
+              <BookingList />
             </CardContent>
           </Card>
         </TabsContent>

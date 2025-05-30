@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { NavItem } from "./NavItem";
-import { useAuth } from "./useAuth";
+import useAuth from "../../hooks/use-auth.tsx";
 
 interface DesktopNavProps {
   navItems: any[];

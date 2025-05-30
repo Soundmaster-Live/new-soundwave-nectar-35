@@ -1,7 +1,7 @@
 const Description = () => {
   return (
     <p className="text-xl text-gray-600">
-      With over a decade of experience in sound engineering, John brings professional audio excellence to every event in Tzaneen & Limpopo
+      Come and enjoy the sounds of Limpopo and request what you want to listen to. Soundmaster Live brings professional audio excellence to every event and streaming experience.
     </p>
   );
 };

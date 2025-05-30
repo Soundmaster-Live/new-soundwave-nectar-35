@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User as UserType } from "@/types/user";
 
 interface MobileUserMenuProps {
-  user: UserType;
+  user: any; // Using 'any' to handle compatibility between Supabase User and our User type
   onSignOut: () => Promise<void>;
   onItemClick: () => void;
 }

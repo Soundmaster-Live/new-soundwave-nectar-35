@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "@/components/theme/theme-provider";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabase";
 import { toast } from "@/components/ui/use-toast";
 
 import { NavLogo } from "./navbar/NavLogo";
@@ -11,11 +11,12 @@ import { DesktopActions } from "./navbar/DesktopActions";
 import { MobileMenuToggle } from "./navbar/MobileMenuToggle";
 import { MobileMenu } from "./navbar/MobileMenu";
 import { useNavItems } from "./navbar/useNavItems";
-import { useAuth } from "./navbar/useAuth";
+import useAuth from "../hooks/use-auth.tsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, loading } = useAuth();
+  const { user, isLoading } = useAuth();
+  // Using 'any' type for user to handle type compatibility between Supabase User and our User type
   const navigate = useNavigate();
   const location = useLocation();
   const { theme, setTheme } = useTheme();
@@ -58,7 +59,7 @@ const Navbar = () => {
             setOpenDropdown={setOpenDropdown} 
           />
           
-          <DesktopActions loading={loading} user={user} />
+          <DesktopActions isLoading={isLoading} user={user} />
 
           <div className="md:hidden flex items-center">
             <MobileMenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -70,7 +71,7 @@ const Navbar = () => {
         isOpen={isOpen}
         navItems={navItems}
         user={user}
-        loading={loading}
+        isLoading={isLoading}
         openDropdown={openDropdown}
         setOpenDropdown={setOpenDropdown}
         handleSignOut={handleSignOut}

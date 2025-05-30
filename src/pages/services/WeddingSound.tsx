@@ -1,20 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Music, Mic, RadioTower, CheckCircle2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { BookingModal } from "@/components/booking/BookingModal";
 
 const WeddingSound = () => {
-  const { toast } = useToast();
-
-  const handleBooking = () => {
-    toast({
-      title: "Booking Request Sent",
-      description: "Thank you for your interest in our Wedding Sound service. We'll contact you soon!",
-    });
-  };
-
   return (
     <div className="pt-16 bg-gradient-to-b from-background to-muted/30">
       {/* Hero Section */}
@@ -28,12 +18,14 @@ const WeddingSound = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Perfect Sound for Your Perfect Day</h1>
             <p className="text-lg text-muted-foreground mb-8">
-              SoundMaster provides professional audio services for every moment of your wedding celebration.
+              SoundMaster provides professional audio services for every moment of your wedding celebration in Tzaneen and across the Limpopo region.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" onClick={handleBooking}>
-                Book Now
-              </Button>
+              <BookingModal
+                eventType="wedding"
+                buttonText="Book Now"
+                buttonSize="lg"
+              />
               <Button size="lg" variant="outline" asChild>
                 <Link to="/contact">Get a Quote</Link>
               </Button>
@@ -139,7 +131,7 @@ const WeddingSound = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Ceremony Only</h3>
                 <p className="text-sm text-muted-foreground mb-6">For intimate weddings</p>
-                <div className="text-3xl font-bold mb-6">$599</div>
+                <div className="text-3xl font-bold mb-6">R5,999</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -158,7 +150,11 @@ const WeddingSound = () => {
                     <span>Early setup and sound check</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={handleBooking}>Select Package</Button>
+                <BookingModal
+                  eventType="wedding"
+                  buttonText="Select Package"
+                  fullWidth
+                />
               </CardContent>
             </Card>
 
@@ -167,7 +163,7 @@ const WeddingSound = () => {
                 <div className="bg-primary text-primary-foreground text-xs font-bold uppercase px-3 py-1 rounded-full w-fit mb-4">Popular</div>
                 <h3 className="text-xl font-semibold mb-2">Reception Package</h3>
                 <p className="text-sm text-muted-foreground mb-6">For your celebration</p>
-                <div className="text-3xl font-bold mb-6">$1,299</div>
+                <div className="text-3xl font-bold mb-6">R12,999</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -190,7 +186,11 @@ const WeddingSound = () => {
                     <span>Custom playlist</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={handleBooking}>Select Package</Button>
+                <BookingModal
+                  eventType="wedding"
+                  buttonText="Select Package"
+                  fullWidth
+                />
               </CardContent>
             </Card>
 
@@ -198,7 +198,7 @@ const WeddingSound = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Complete Wedding</h3>
                 <p className="text-sm text-muted-foreground mb-6">Ceremony & Reception</p>
-                <div className="text-3xl font-bold mb-6">$1,899</div>
+                <div className="text-3xl font-bold mb-6">R18,999</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -225,109 +225,11 @@ const WeddingSound = () => {
                     <span>Backup equipment</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={handleBooking}>Select Package</Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">Happy Couples</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2 text-amber-400 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <p className="italic mb-6">
-                    "SoundMaster was amazing for our wedding! The DJ kept everyone dancing all night and the ceremony sound was perfect. Every word of our vows was crystal clear."
-                  </p>
-                  <div className="mt-auto">
-                    <p className="font-semibold">Sarah & Michael</p>
-                    <p className="text-sm text-muted-foreground">Married June 2023</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2 text-amber-400 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <p className="italic mb-6">
-                    "We chose the Complete Wedding package and couldn't be happier. From the ceremony to the last dance, everything was handled professionally. The online planning portal was a huge help!"
-                  </p>
-                  <div className="mt-auto">
-                    <p className="font-semibold">Jessica & David</p>
-                    <p className="text-sm text-muted-foreground">Married September 2023</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2 text-amber-400 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <p className="italic mb-6">
-                    "Our wedding DJ was fantastic! He read the crowd perfectly and kept the dance floor packed. The lighting added so much atmosphere to our venue. Worth every penny!"
-                  </p>
-                  <div className="mt-auto">
-                    <p className="font-semibold">Emma & James</p>
-                    <p className="text-sm text-muted-foreground">Married August 2023</p>
-                  </div>
-                </div>
+                <BookingModal
+                  eventType="wedding"
+                  buttonText="Select Package"
+                  fullWidth
+                />
               </CardContent>
             </Card>
           </div>
@@ -343,9 +245,11 @@ const WeddingSound = () => {
               Contact us today to discuss your wedding plans and let us help create the perfect soundtrack for your special day.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" onClick={handleBooking}>
-                Book Now
-              </Button>
+              <BookingModal
+                eventType="wedding"
+                buttonText="Book Now"
+                buttonSize="lg"
+              />
               <Button size="lg" variant="outline" asChild>
                 <Link to="/contact">Contact Us</Link>
               </Button>

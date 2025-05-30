@@ -6,16 +6,16 @@ import { NotificationMenu } from "./NotificationMenu";
 import { User as UserType } from "@/types/user";
 
 interface DesktopActionsProps {
-  loading: boolean;
-  user: UserType | null;
+  isLoading: boolean;
+  user: any;
 }
 
-export const DesktopActions = ({ loading, user }: DesktopActionsProps) => {
+export const DesktopActions = ({ isLoading, user }: DesktopActionsProps) => {
   return (
     <div className="hidden md:flex items-center space-x-3">
-      {!loading && !user ? (
+      {!isLoading && !user ? (
         <AuthButtons />
-      ) : !loading && user ? (
+      ) : !isLoading && user ? (
         <>
           <NotificationMenu userId={user.id} />
           <UserMenu user={user} />

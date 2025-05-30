@@ -26,15 +26,15 @@ const HeroSection = ({ user, onSearch }: HeroSectionProps) => {
           {/* Main content */}
           <div className="text-left space-y-6">
             <div className="inline-block px-4 py-1.5 bg-primary/10 backdrop-blur-sm rounded-full text-primary border border-primary/20 mb-4">
-              <span className="text-sm font-medium">Experience SoundMaster Live</span>
+              <span className="text-sm font-medium">Experience Soundmaster Live</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              The Ultimate <span className="text-primary">DJ Experience</span> for Your Events
+              Enjoy the <span className="text-primary">Sounds of Limpopo</span> Live
             </h1>
             
             <p className="text-lg text-gray-300 max-w-xl">
-              Professional sound equipment, exceptional music selection, and experienced DJs make SoundMaster your premier choice for events and live radio.
+              Come and enjoy the sounds of Limpopo and request what you want to listen to. Soundmaster Live brings professional audio excellence to every streaming experience.
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">

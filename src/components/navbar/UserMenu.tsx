@@ -12,11 +12,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { toast } from "@/components/ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabase";
 import { User as UserType } from "@/types/user";
 
 interface UserMenuProps {
-  user: UserType;
+  user: any; // Using 'any' to handle compatibility between Supabase User and our User type
 }
 
 export const UserMenu = ({ user }: UserMenuProps) => {

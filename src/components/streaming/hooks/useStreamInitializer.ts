@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Howl } from 'howler';
-import { StreamMetadata } from '@/types/stream';
+import { StreamMetadata } from '../../../types/stream';
 
 const detectFormat = (url: string): string[] => {
   if (url.includes('.aac')) return ['aac'];
