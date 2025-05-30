@@ -138,6 +138,7 @@ export const AIBroadcaster: React.FC<AIBroadcasterProps> = ({
           openTTSSettings={openTTSSettings}
           getBroadcastTypeIcon={getBroadcastTypeIcon}
           activeProvider={activeProvider}
+          isSpeaking={isSpeaking}
         />
       </CardHeader>
       
@@ -191,7 +192,9 @@ export const AIBroadcaster: React.FC<AIBroadcasterProps> = ({
       
       <WelcomeMessage
         isInitializing={isInitializing}
-        isAuthenticated={isAuthenticated}
+        isStreamOnline={isStreamOnline}
+        initializationError={initializationError}
+        messages={messages}
         generateBroadcast={generateBroadcast}
       />
       
@@ -205,8 +208,11 @@ export const AIBroadcaster: React.FC<AIBroadcasterProps> = ({
       
       {/* Stream context for audio visualization */}
       <AIStreamContext
-        isSpeaking={isSpeaking}
-        volume={broadcastVolume}
+        streamMetadata={null}
+        activeProvider={activeProvider}
+        isInitializing={isInitializing}
+        initializationError={initializationError}
+        handleRetryConnection={() => resetConnection()}
       />
     </Card>
   );
